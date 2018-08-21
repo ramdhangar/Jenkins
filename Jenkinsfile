@@ -12,6 +12,7 @@ pipeline {
             steps {
                 // 
                   echo "Im from Test"
+                   echo "Second changes"
             }
         }
         stage('Deploy') { 

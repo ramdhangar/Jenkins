@@ -1,24 +1,33 @@
 pipeline {
     agent any 
-    stages {
-        stage('Build') { 
+        
+   
+     stages {
+        stage('Build') {
             steps {
-                // 
-                echo "Im from Build"
-                echo "First changes"
+                echo "Hello from Build"
             }
         }
-        stage('Test') { 
+        stage('Test') {
             steps {
-                // 
-                  echo "Im from Test"
-                   echo "Second changes"
+                 echo "Hello from Test"
             }
         }
-        stage('Deploy') { 
+        stage('Deliver for development') {
+            when {
+                branch 'development' 
+            }
             steps {
-                //
-                  echo "Im from Deploy"
+                
+		 echo "Im from develop branch"
+            }
+        }
+        stage('Deploy for production') {
+            when {
+                branch 'production'  
+            }
+            steps {
+                echo "Im from production branch"
             }
         }
     }

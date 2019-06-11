@@ -4,7 +4,7 @@ node {
 
 }
    stage('Build') {
-     sh "$MAVEN clean package"
+     sh "sudo $MAVEN clean package"
 }
     stage('Package-Deploy') {
    sshagent(['pipe']) {
